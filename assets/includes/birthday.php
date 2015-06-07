@@ -1,0 +1,1 @@
+ <?php$datetime1 = new DateTime('now'); $birthdate = new DateTime('1989-04-10'); $interval = date_diff(new DateTime('now'), new DateTime('1989-04-10')); $yearAlive=$interval->format('%y');echo $yearAlive; ?>
