@@ -24,13 +24,13 @@ self.addEventListener('message', function(e) {
         var w=options['w'];        var sig=options['sig'];
         var lambda0=options['lambda0'];
         var y0=options['y0'];        var xaxis=options.xaxis;
-        //computeXmax(15);        console.log(xaxis);
+        //computeXmax(15);        //console.log(xaxis);
         //var xmax=computeXmax(15);
         var m=sigma.length;        var riskContribution=[];        var elContribution=[];
         var n=p.length;        var lambda=0;        for(var i=0; i<n; i++){            lambda=lambda+r[i];        }        lambda=lambda+lambda0;        var eLoss=0;         var alph=.05;//in future, this will be decided from the calling class...        var alphaW=a*b*alph*n;//in future, this will be decided from the calling class...        var varL=0;
         //var xmax=a*b*.2*n; //this is definely not the right way to do this...        var xmax=0;        var xmin=0;        if(xaxis){            xmin=xaxis.min;            xmax=xaxis.max;        }        else {            xmin=-computeXmax(10);            xmax=alphaW*4;//this has to be significantly higher than alphaW to work...
         }        var xRange=xmax-xmin;
-        console.log(xRange);
+        //console.log(xRange);
         computeDistribution(options['k'], options['h'], xmin, xRange);
         function computeXmax(c){            var el=getEL();            var vl=getVariance();
             return(el+c*Math.sqrt(vl));
@@ -123,7 +123,7 @@ self.addEventListener('message', function(e) {
                 var vp=math.multiply(phiZ(v), math.exp(math.complex(0, -du*j*xmin))); //required per fang oosterlee page 4
                 f.push(math.re(vp)*cp);
             }
-            f[0]=.5*f[0];            console.log(f);
+            f[0]=.5*f[0];            //console.log(f);
             exloss=0;
             vloss=0;
             var cdf=0;
