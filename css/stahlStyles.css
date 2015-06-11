@@ -24,20 +24,20 @@ body.main{    padding: 0;}
     position: relative;
     top: 60%;
      display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 6vh;
+    font-family: 'Raleway', sans-serif;    font-size: 2.5em;
+    /*font-size: 6vh;*/
     /*font-size: 500%;*/
     color:#F2F2F2;
 }
 
 .title {
-   font-size: 250%;
+   /*font-size: 250%;*/   font-size: 2.25em;
    display: block;
    font-family: 'Raleway', sans-serif;
 
 }
 .subTitle {
-   font-size: 200%;  
+   /*font-size: 200%;  */    font-size: 2em;
    display: block;
    font-family: 'Raleway', sans-serif;
 
@@ -51,7 +51,7 @@ body.main{    padding: 0;}
     text-align:left;
 }
 .txt {
-    font-size: 150%; 
+    /*font-size: 150%; */    font-size: 1.5em;
    /* font-size: 175%;*/
    display: block;
    font-family: 'Raleway', sans-serif;

@@ -4,7 +4,7 @@
 <head>
 <?php include 'assets/includes/header.php';?>
  
- <link rel='stylesheet' type='text/css' href='css/frontPageStyles.css' />
+ <!--<link rel='stylesheet' type='text/css' href='css/frontPageStyles.css' /> -->
  
 <style type="text/css">
     #displayName {
