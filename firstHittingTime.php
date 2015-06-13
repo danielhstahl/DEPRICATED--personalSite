@@ -15,7 +15,7 @@
         Disclaimer: Rigor is sacrificed for the sake of clarity.  Most proofs or derivations are heuristic.
     </div>
     <div > <!--used to have a container here -->
-        <div class='col-xs-8 col-xs-offset-2'>             <div class='txt'>                This page describes how to numerically compute the density of the first hitting time of a CEV process.  See <?php include 'assets/includes/scrapeSimilar.php'; ?> for the application that displays this density.            </div>
+        <div class='col-xs-8 col-md-6 col-xs-offset-3'>             <div class='txt'>                This page describes how to numerically compute the density of the first hitting time of a CEV process.  See <?php include 'assets/includes/scrapeSimilar.php'; ?> for the application that displays this density.            </div>
             <div class='title lead'><h2>Introduction</h2> </div>            <div class='txt'>
                 In a continuous setting, the "first hitting time" of a process is defined as the first time a process \(X_t\) is equal to a level \(m\).  If the process is random, the first hitting time (denoted \(\tau_m \)) is also random.  With few exceptions, the density of the first hitting time of even a single dimensional Stochastic Differential Equation (SDE) is not explicitly known.  However, finding the distribution numerically is not computationally difficult.  The technique involves the characteristic function of \(X_t\).  The next section explains characteristic functions and their use with a simple example.            </div>
             

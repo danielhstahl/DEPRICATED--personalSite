@@ -189,7 +189,7 @@
 				else {
                     $('.progress').hide();
 					data=event.data.result;                    if(!finalChart){
-                        createFinalChart(data[0], data[1]);                    }                    else {                        finalChart.addSeries({                                                    name: "pdf",                            data: data[1]                        });                    }
+                        createFinalChart(data.x, data.y, data.maxY);                    }                    else {                        finalChart.addSeries({                                                    name: "pdf",                            data: data[1]                        });                    }
 					console.log(data);
 				}
 			};
@@ -222,86 +222,6 @@
                 500
             );
         }); 
-        /*function getValues(){ 
-            $('input').each(function(){
-                var current=$(this);               
-                var id=current.attr('id');
-                attributes[id]=current.val();
-                if(!isNumeric(attributes[id])){ 
-                    attributes[id]=Number(current.attr('placeholder'));
-                }
-                else {
-                    attributes[id]=Number(attributes[id]);
-                }           
-            });
-        }
-        function isNumeric(n) {
-            return !isNaN(parseFloat(n)) && isFinite(n);
-        } */
-        function plotUnif(min, max){
-            var range=Number(max);
-            var dx=Number(min);
-            range=range+dx;
-            var discrete=50;
-            if(dx!==0){
-                discrete=Math.round(range/dx);
-            }
-            else {
-                dx=range/discrete;
-            }
-            var xSeries=[];
-            var ySeries=[];
-            var density=1.0/(max-min);
-            for(var i=0; i<discrete; i++){
-                xSeries.push(i*dx);
-                ySeries.push(density);
-            }
-            unifChart=new Highcharts.Chart({//$('#ExposureChart').highcharts({              
-                chart:{
-                    type:'spline',
-                    renderTo: 'UniformChart'
-                },
-                title: {
-                    text:""
-                },
-                credits:{
-                    enabled:false
-                },
-                xAxis:{
-                    categories:xSeries,
-                    labels:{
-                        formatter: function() {
-                            return Highcharts.numberFormat(this.value,4, ".", ",");
-                        }
-                    }
-                },
-                yAxis:{
-                    min:0
-                },
-                legend:{
-                    enabled:false
-                },
-                 plotOptions: {
-                    spline: {
-                        lineWidth: 2,
-                        states: {
-                            hover: {
-                                lineWidth: 4
-                            }
-                        },
-                        marker: {
-                            enabled: false
-                        }
-                    }
-                }, 
-                series:[
-                    {
-                        name:'PDF', 
-                        data:ySeries
-                    }
-                ]
-            });
-        }
         function plotPdf( alpha, beta){
             var range=alpha*beta+5*Math.sqrt(alpha*(beta*beta));
             var discrete=50;
@@ -362,7 +282,7 @@
                 ]
             });
         }
-        function createFinalChart(x, y){           // var n=x.length;           // var bound=Math.round(n*.2);           // var minX=x[bound];           // console.log(minX);           // console.log(x[0]);           // var maxX=x[n-bound];
+        function createFinalChart(x, y, yMax){            var n=x.length;            var nMin=0;            var nMax=n-1;            var yMin=yMax*.003; //since otherwise long lead in, lead out            //console.log(y[nMin]);            //console.log(yMax);            while(y[nMin]<yMin){                  nMin++;            }            while(y[nMax]<yMin){                nMax--;            }            var xAxis=x.slice(nMin, nMax+1);            var yAxis=y.slice(nMin, nMax+1);            //console.log(y);            //console.log(nMin);           // console.log(nMax);
             finalChart=new Highcharts.Chart({//$('#ExposureChart').highcharts({
                 chart:{
                     type:'spline',
@@ -375,7 +295,7 @@
                     enabled:false
                 },
                 xAxis:{
-                    categories:x,                    //min:minX,                   // max:maxX,
+                    categories:xAxis,                   // min:xmin,                   // max:xmax,
                     labels:{
                         formatter: function() {
                             return Highcharts.numberFormat(this.value,2, ".", ",");
@@ -404,10 +324,10 @@
                 series:[
                     {
                         name:'density', 
-                        data:y
+                        data:yAxis
                     }
                 ]
-            });           // finalChart.xAxis[0].setExtremes(minX,maxX);            //finalChart.showResetZoom();
+            });            //finalChart.xAxis[0].setExtremes(xmin,xmax);            //finalChart.showResetZoom();
         }
         function createTS(X0,alpha, sigma, t){
             var discrete=200;

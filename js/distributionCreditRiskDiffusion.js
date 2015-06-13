@@ -128,7 +128,7 @@ self.addEventListener('message', function(e) {
             vloss=0;
             var cdf=0;
             var mx=0;
-            var yp=0;
+            var yp=0;            var maxY=0;
             for(var i=0;  i<h; i++){
                 yp=0;
                 x.push(xmin+dx*i);
@@ -136,7 +136,7 @@ self.addEventListener('message', function(e) {
                 self.postMessage({update: updateRatio+'%'}); 
                 for(var j=0; j<k; j++){
                     yp=yp+f[j]*Math.cos(du*j*dx*i); //doesnt require xmin+(dx*i) per fang oosterlee page 4
-                }  
+                }                  if(yp>maxY){                    maxY=yp;                }
                 y.push(yp);
                 vloss=vloss+yp*i*dx*dx*i; 
                 exloss=exloss+yp*i*dx;                
@@ -146,7 +146,7 @@ self.addEventListener('message', function(e) {
                 ValueAtRisk[mx.toString()]=x[i];
                 mx=mx+.001;
             }
-            self.postMessage( {result:[x, y]});    
+            self.postMessage( {result:{"x":x, "y":y, "maxY":maxY}});    
             
             exloss=exloss-xmax*.5*y[h-1];
             exloss=exloss*dx; 
@@ -267,12 +267,5 @@ self.addEventListener('message', function(e) {
             }
             return eLoss;
         }
-        
-     
-        
-
     }
-    
-    
-		
 });
