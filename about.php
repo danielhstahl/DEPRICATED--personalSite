@@ -42,6 +42,21 @@
                 years old, married to a wonderful woman, and currently residing in Winston Salem, NC.
             </div>
             <br>
+            <div class="title lead">
+                <h2> Skills</h2>
+            </div>
+            <div class="txt">
+                I have created applications in Java, C++, Python, and HTML/Javascript.  Some of these applications are available on  <a href="projects.php">this site</a> while others are available on my <a href="https://github.com/phillyfan1138/"> github</a> page.  These applications range from an <a href="https://github.com/phillyfan1138/TreeClass">automatic recombining tree class for any single dimensional stochastic differential equation</a> to creating an <a href="https://github.com/phillyfan1138/DuneClient">interface</a> between <a href="http://emby.media/">emby</a> and the <a href="http://www.dune-hd-usa.com/">Dune Media Player</a>.  
+                <br>
+                <br>
+                I have extensive experience in designing and creating databases in SQL Server.  At my previous job I created a data warehouse which captured and retained all loan data.  This enabled more advanced analytics including seasoning analysis and time to default analysis.  Additionally, the availability of this data enabled economic capital and ALLL calculations to be computed in seconds instead of the days of data gathering that previously was required.  In my current position, I am designing, implementing, and tracking our workflow around data tests.  To this end I have created an extensive infrastructure with dozens of normalized and interlinked tables.  This enables automated workflows, automated documentation generation, and clever visualizations showing the inter-relationships between all the tables.
+                <br><br>
+                At my previous job I created the ALLL and economic capital models.  The economic capital model used <a href="http://arxiv.org/pdf/0708.2542.pdf">Euler's </a> method to push economic capital to each loan in the portfolio.  Each of these models had a GUI which allowed non-technical users to price loans and analyze risk.
+                <br>
+                <br>
+                Additionally I have a working knowledge of SAS, VBA, and VB.net; though it pains me to use such antiquated languages.  
+            </div>
+            <br>
             <div class='title lead'>
                 <h2>Analytics</h2>
             </div>
