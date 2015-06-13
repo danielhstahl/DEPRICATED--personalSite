@@ -1,0 +1,25 @@
+/*include this on first page only....AFTER including stahlStyles.css */
+.title {
+   font-size: 6vh;
+   display: block;
+   font-family: 'Raleway', sans-serif;
+
+}
+.subTitle {
+   font-size: 4vh; 
+   display: block;
+   font-family: 'Raleway', sans-serif;
+
+}
+/*.background  {
+    font-size: 4vh;
+    
+   display: block;
+   font-family: 'Raleway', sans-serif;
+} */
+.txt {
+    font-size: 2.5vh; 
+   /* font-size: 175%;*/
+   display: block;
+   font-family: 'Raleway', sans-serif;
+}  

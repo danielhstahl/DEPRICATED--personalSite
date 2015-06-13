@@ -12,7 +12,7 @@
         z-index:999;
         width:100%;
         /*margin-top:15px;*/
-        padding-top:15px;
+        /*padding-top:15px;*/
         visibility:inherit;
         opacity:1;
     }
@@ -34,9 +34,9 @@
 
 <body class='main'>               
     <div id='displayName' >
-        <div class='container' id='name'>
+        <div class='container lead' id='name'>
         
-          Daniel Stahl 
+          <h1>Daniel Stahl </h1>
                      
         </div>
         <hr> 
@@ -57,9 +57,9 @@
     <section id='prod' class="panel productivity">
         <div class="row">
             <div class="container " > <!--style="background-image: url(../../img/example_parallax_bg1.png);"-->
-                <div class='subTitle productivity col-md-4' id='productivityDesc'>
+                <div class='subTitle productivity col-md-4 lead' id='productivityDesc'>
                 <!--<div class='background productivity' id='productivityDesc'>-->
-                    Productivity
+                    <h2>Productivity</h2>
                 </div>
                 <div class='col-md-8 txt'>
                 <!--<div class='col-md-12 txt'>  -->
@@ -71,8 +71,8 @@
     <section class="panel data">
         <div class="row">
             <div class="container " > <!--style="background-image: url(../../img/example_parallax_bg1.png);"-->
-                <div class='subTitle data col-md-4' id='dataDesc'>
-                    Data Management
+                <div class='subTitle data col-md-4 lead' id='dataDesc'>
+                    <h2>Data Management</h2>
                 </div>
                 <div class='col-md-8 txt'>
                    The purpose of data is to deliver information to humans in an actionable form. This purpose implies data availability, data integrity, and data connectivity.  To help achieve this purpose, I have self-imposed the following criteria:
@@ -93,8 +93,8 @@
      <section class="panel model">
         <div class="row">
             <div class="container " > <!--style="background-image: url(../../img/example_parallax_bg1.png);"-->
-                <div class='subTitle model col-md-4' id='modelDesc'>
-                    Mathematical Modeling 
+                <div class='subTitle model col-md-4 lead' id='modelDesc'>
+                    <h2>Mathematical Modeling </h2>
                 </div>
                 <div class='col-md-8 txt'>
                 

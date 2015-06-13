@@ -5,17 +5,17 @@
          <script src="js/inverseNorm.js"></script>
     </head>
     <body>
-        <div class='jumbotron navbar-fixed-top'>
-            <div class="container title ">
-                Distribution of Credit Losses
+        <div class='navbar-fixed-top'>
+            <div class="container title lead">
+                <h1>Distribution of Credit Losses</h1>
             </div>
         </div>
 		<div class="container">
 			
 			<div class='row'>
 				<div class='col-md-12 holdSection'>
-                    <div class='subTitle'>
-                        Basic Portfolio Attributes
+                    <div class='subTitle lead'>
+                        <h2>Basic Portfolio Attributes</h2>
                     </div>
                     <div class='toggle txt' id='descriptionNumAssets'>
                         The number of assets in the portfolio and the time horizon of the portfolio.  Even very large portfolios can be efficiently computed using this algorithm.
@@ -34,8 +34,8 @@
             <hr>
             <div class='row'>
                 <div id='pdf' class='col-md-4 holdSection'>
-                    <div class='subTitle'>
-                        Exposure
+                    <div class='subTitle lead'>
+                        <h2>Exposure</h2>
                     </div>
                     <div class='toggle txt' id='Exposure'>
                         This is the distribution for the exposure of each asset.  In this case, the distribution for each exposure is an identical Gamma distribution with parameters \(a\) and \(b\).  The mean and variance of the distribution is \(ab\) and \(ab^2\) respectively.  In general, the exposures may follow completely different distributions for each asset, but it would be onerous to specify a different distribution for each of \(n\) assets.  
@@ -58,8 +58,8 @@
             <hr>
             <div class='row'>
                 <div id='pd' class='col-md-12 holdSection'>
-                    <div class='subTitle'>
-                        Probability of Default
+                    <div class='subTitle lead'>
+                        <h2>Probability of Default</h2>
                     </div>
                     <div class='toggle txt' id='Probability'>
                         Use this to generate the distribution of probabilities of default.  The sample is from a uniform distribution.  Note that this distribution is not incorporated in the actual model; it is simply a technique to generate \(n\) different default probabilities without explicitly defining each probability.  In practice the probabilities of default would be generated from some sort of PD model (preferably one with intensity based modeling rather than static logistic style modeling).  Stochastic default is driven by the Systemic Default Variable below. 
@@ -81,8 +81,8 @@
             <hr>
             <div class='row'>
                 <div id='ts' class='col-md-4 holdSection'>
-                    <div class='subTitle'>
-                        Systemic Default Parameters
+                    <div class='subTitle lead'>
+                        <h2>Systemic Default Parameters</h2>
                     </div>
                     <div class='toggle txt' id='Underlying'>
                         This is the parametrization for the underlying systemic variable which has dynamics \(dX=\alpha(1-X)dt+\sigma dW_t\).  In general this can be an \(m\) dimensional process; however entering parameters for each process would be onerous.  
@@ -105,7 +105,7 @@
 				<div class='col-md-8'>   
                     <div id="UnderlyingChart"></div>
                 </div>
-			</div>            <div class='row'>                <div id='diffusion' class='col-md-12 holdSection'>                    <div class='subTitle'>                        Diffusion Parameters                    </div>                    <div class='toggle txt' id='diffsection'>                        The model allows for drift and diffusion for each asset; time changed by the systemic default process.  The drift and diffusion are thus correlated with the potential for credit loss.  An alternate interpretation in the case of a multidimensional systemic process can be made if one of the dimensions is considered an interest rate.  Then the drift can have the interpretation as the linear function of the interest rate.  This would be a reasonable interpretation if many of the assets were variable rate loans tied to a single benchmark.                    </div>					<div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">sigma</span>						<input id="sig" type="text" name="" class="form-control required" placeholder=".1">					</div>                    <div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">alpha</span>						<input id="alph" type="text" name="" class="form-control required" placeholder=".05">					</div>				</div>            </div>            <div class='row'>                <div id='diffusion' class='col-md-12 holdSection'>                    <div class='subTitle'>                        Model Parameters                    </div>                    <div class='toggle txt' id='diffsection'>                        Select the number of discrete steps in \(x\) and the number of discrete steps in \(u\).  The higher these numbers, the slower the model will run; but the more accurate the model will be.                    </div>					<div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">Steps in \(x\)</span>						<input id="h" type="text" name="" class="form-control required" placeholder="1024">					</div>                    <div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">Steps in \(u\)</span>						<input id="k" type="text" name="" class="form-control required" placeholder="256">					</div>				</div>            </div>
+			</div>            <div class='row'>                <div id='diffusion' class='col-md-12 holdSection'>                    <div class='subTitle lead'>                        <h2>Diffusion Parameters</h2>                    </div>                    <div class='toggle txt' id='diffsection'>                        The model allows for drift and diffusion for each asset; time changed by the systemic default process.  The drift and diffusion are thus correlated with the potential for credit loss.  An alternate interpretation in the case of a multidimensional systemic process can be made if one of the dimensions is considered an interest rate.  Then the drift can have the interpretation as the linear function of the interest rate.  This would be a reasonable interpretation if many of the assets were variable rate loans tied to a single benchmark.                    </div>					<div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">sigma</span>						<input id="sig" type="text" name="" class="form-control required" placeholder=".1">					</div>                    <div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">alpha</span>						<input id="alph" type="text" name="" class="form-control required" placeholder=".05">					</div>				</div>            </div>            <div class='row'>                <div id='diffusion' class='col-md-12 holdSection'>                    <div class='subTitle lead'>                        <h2>Model Parameters</h2>                    </div>                    <div class='toggle txt' id='diffsection'>                        Select the number of discrete steps in \(x\) and the number of discrete steps in \(u\).  The higher these numbers, the slower the model will run; but the more accurate the model will be.                    </div>					<div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">Steps in \(x\)</span>						<input id="h" type="text" name="" class="form-control required" placeholder="1024">					</div>                    <div class="input-group"><span class="input-group" id="">						<span class="input-group-addon" id="">Steps in \(u\)</span>						<input id="k" type="text" name="" class="form-control required" placeholder="256">					</div>				</div>            </div>
             <hr>
 			<div class='row'>
                 <div class='col-md-4'>
@@ -222,7 +222,7 @@
                 500
             );
         }); 
-        function getValues(){ 
+        /*function getValues(){ 
             $('input').each(function(){
                 var current=$(this);               
                 var id=current.attr('id');
@@ -237,7 +237,7 @@
         }
         function isNumeric(n) {
             return !isNaN(parseFloat(n)) && isFinite(n);
-        } 
+        } */
         function plotUnif(min, max){
             var range=Number(max);
             var dx=Number(min);

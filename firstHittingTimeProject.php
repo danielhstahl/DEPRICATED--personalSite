@@ -20,9 +20,9 @@
     <body>
         
 		
-		<div class='jumbotron navbar-fixed-top'>
-            <div class="container title">
-               Compute the Density of the First Hitting Time
+		<div class='navbar-fixed-top'>
+            <div class="container title lead">
+               <h1>Compute the Density of the First Hitting Time</h1>
             </div>
         </div>
         <div class="container">
@@ -107,14 +107,15 @@
             $('#progressBar').css("width", "0%");
             var allFilledIn=true;
             var options={};
-            $('.required').each(function(val){
+            getValues();
+           /* $('.required').each(function(val){
                 var values=$(this).val();
                 if(!values){
                     allFilledIn=false;
                 }
                 options[$(this).attr('id')]=Number(values); 
         
-            });
+            });*/
             if(!allFilledIn){
                 alert("requires all to be filled in!");
                 return false;
@@ -124,7 +125,7 @@
             //var data=FangOosterlee(n, k, l, m, alpha, delta, sigma, m*.2, $('.progress-bar')); //hopefully m*.2 is a good number..
             var worker = new Worker('js/ode.js');
 			worker.postMessage({'options': 
-				options
+				attributes
 			});
              $('.progress').show();//('hidden');
             //data=FangOosterlee(options, $("#progress")); //hopefully m*.2 is a good number..

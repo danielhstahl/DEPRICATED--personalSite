@@ -14,7 +14,7 @@
 <link rel='stylesheet' type='text/css' href='css/style2.css' />
 <link rel='stylesheet' type='text/css' href='css/stahlStyles.css' /> 
 <link rel='stylesheet' href='styles/default.css'>
-<script src='js/modernizr.custom.js'></script>
+<script src='js/modernizr.custom.js'></script><script src='js/utilityFunctions.js'></script>
 <!--script src='js/highlight.pack.js'></script>-->
 <link href='css/prism.css' rel='stylesheet' />
 <script src='js/prism.js'></script>

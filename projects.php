@@ -10,18 +10,18 @@
 
     <body>
 
-        <div class='jumbotron navbar-fixed-top'>
+        <div class='navbar-fixed-top'>
 
-            <div class="container title">
+            <div class="container title lead">
 
-                Projects
+                <h1>Projects</h1>
 
             </div>
 
         </div>
         <div class='container'>
             <div class='txt'>
-                My projects I create to improve my technical and coding skills.  HTML and javascript are simple languages that can be efficiently coded into a phenomenal user experience.  I used to code my GUI applications in java and c++ but was constrained in distribution.  For some computationally burdensome projects I still prefer to code in a lower level language. 
+                My projects I create to improve my technical and coding skills.  HTML and javascript are simple languages that can be efficiently coded into a phenomenal user experience.  I used to code my GUI applications in java and c++ but the coding that was required for user-friendly interfaces was an obstacle.  However, for some computationally burdensome projects I still prefer to code in a lower level language. 
             </div>
             <?php include 'assets/includes/scrapeSite.php'; ?>
         </div>
