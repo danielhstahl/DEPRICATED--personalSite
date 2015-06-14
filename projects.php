@@ -20,7 +20,7 @@
 
         </div>
         <div class='container'>
-            <div class='txt'>
+            <div class='txt  col-xs-12 col-md-8'>
                 My projects I create to improve my technical and coding skills.  HTML and javascript are simple languages that can be efficiently coded into a phenomenal user experience.   
             </div>
             <?php include 'assets/includes/scrapeSite.php'; ?>

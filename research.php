@@ -20,7 +20,7 @@
 
         </div>
         <div class='container'>
-            <div class='txt'>
+            <div class='txt  col-xs-12 col-md-8'>
                 My research is a combination of major and small projects which pique my interest.  My interests lie in stochastic calculus, asset and option modeling, and credit risk modeling.  
             </div>
             <?php include 'assets/includes/scrapeSite.php'; ?>

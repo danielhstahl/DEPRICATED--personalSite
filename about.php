@@ -28,52 +28,53 @@
 
         </div>
         <div class='container'>
-            <div class='title lead'>
-                <h2>Summary</h2>
-            </div>
-            <div class='txt'>
-                I work for BB&T (<span class='stock' id='NYSE:BBT'></span>) in Audit Analytics.  I have a masters degree in mathematical finance from the University of North Carolina Charlotte.  Previously I worked as a model developer and risk analyst at Uwharrie Capital Corp (<span class='stock' id='OTCMKTS:UWHR'></span>); a small community bank outside Charlotte, NC.  I am 
-                <?php $datetime1 = new DateTime('now'); 
-                    $birthdate = new DateTime('1989-04-10'); 
-                    $interval = date_diff(new DateTime('now'), new DateTime('1989-04-10')); 
-                    $yearAlive=$interval->format('%y');
-                    echo $yearAlive; 
-                ?>
-                years old, married to a wonderful woman, and currently residing in Winston Salem, NC.
-            </div>
-            <br>
-            <div class="title lead">
-                <h2> Skills</h2>
-            </div>
-            <div class="txt">
-                I have created applications in Java, C++, Python, and HTML/Javascript.  Some of these applications are available on  <a href="projects.php">this site</a> while others are available on my <a href="https://github.com/phillyfan1138/"> github</a> page.  These applications range from an <a href="https://github.com/phillyfan1138/TreeClass">automatic recombining tree class for any single dimensional stochastic differential equation</a> to creating an <a href="https://github.com/phillyfan1138/DuneClient">interface</a> between <a href="http://emby.media/">emby</a> and the <a href="http://www.dune-hd-usa.com/">Dune Media Player</a>.  
+            <div class= 'col-xs-12 col-md-8'>
+                <div class='title lead'>
+                    <h2>Summary</h2>
+                </div>
+                <div class='txt'>
+                    I work for BB&T (<span class='stock' id='NYSE:BBT'></span>) in Audit Analytics.  I have a masters degree in mathematical finance from the University of North Carolina Charlotte.  Previously I worked as a model developer and risk analyst at Uwharrie Capital Corp (<span class='stock' id='OTCMKTS:UWHR'></span>); a small community bank outside Charlotte, NC.  I am 
+                    <?php $datetime1 = new DateTime('now'); 
+                        $birthdate = new DateTime('1989-04-10'); 
+                        $interval = date_diff(new DateTime('now'), new DateTime('1989-04-10')); 
+                        $yearAlive=$interval->format('%y');
+                        echo $yearAlive; 
+                    ?>
+                    years old, married to a wonderful woman, and currently residing in Winston Salem, NC.
+                </div>
                 <br>
+                <div class="title lead">
+                    <h2> Skills</h2>
+                </div>
+                <div class="txt">
+                    I have created applications in Java, C++, Python, and HTML/Javascript.  Some of these applications are available on  <a href="projects.php">this site</a> while others are available on my <a href="https://github.com/phillyfan1138/"> github</a> page.  These applications range from an <a href="https://github.com/phillyfan1138/TreeClass">automatic recombining tree class for any single dimensional stochastic differential equation</a> to creating an <a href="https://github.com/phillyfan1138/DuneClient">interface</a> between <a href="http://emby.media/">emby</a> and the <a href="http://www.dune-hd-usa.com/">Dune Media Player</a>.  
+                    <br>
+                    <br>
+                    I have extensive experience in designing and creating databases in SQL Server.  At my previous job I created a data warehouse which captured and retained all loan data.  This enabled more advanced analytics including seasoning analysis and time to default analysis.  Additionally, the availability of this data enabled economic capital and ALLL calculations to be computed in seconds instead of the days of data gathering that previously was required.  In my current position, I am designing, implementing, and tracking our workflow around data tests.  To this end I have created an extensive infrastructure with dozens of normalized and interlinked tables.  This enables automated workflows, automated documentation generation, and clever visualizations showing the inter-relationships between all the tables.
+                    <br><br>
+                    At my previous job I created the ALLL and economic capital models.  The economic capital model used <a href="http://arxiv.org/pdf/0708.2542.pdf">Euler's </a> method to push economic capital to each loan in the portfolio.  Each of these models had a GUI which allowed non-technical users to price loans and analyze risk.
+                    <br>
+                    <br>
+                    Additionally I have a working knowledge of SAS, VBA, and VB.net; though it pains me to use such antiquated languages.  
+                </div>
                 <br>
-                I have extensive experience in designing and creating databases in SQL Server.  At my previous job I created a data warehouse which captured and retained all loan data.  This enabled more advanced analytics including seasoning analysis and time to default analysis.  Additionally, the availability of this data enabled economic capital and ALLL calculations to be computed in seconds instead of the days of data gathering that previously was required.  In my current position, I am designing, implementing, and tracking our workflow around data tests.  To this end I have created an extensive infrastructure with dozens of normalized and interlinked tables.  This enables automated workflows, automated documentation generation, and clever visualizations showing the inter-relationships between all the tables.
-                <br><br>
-                At my previous job I created the ALLL and economic capital models.  The economic capital model used <a href="http://arxiv.org/pdf/0708.2542.pdf">Euler's </a> method to push economic capital to each loan in the portfolio.  Each of these models had a GUI which allowed non-technical users to price loans and analyze risk.
+                <div class='title lead'>
+                    <h2>Analytics</h2>
+                </div>
+                <div class='txt'>
+                    Audit Analytics provides data services to Audit Services to facilitate audit testing.  These data services involve creating visualizations to make the underlying data accessible and actionable to Audit Services, automating audit testing, and providing self-service tools for auditors to dynamically explore the data.  Audit provides a unique opportunity for analyzing data.  Audit's mandate is to independently access bank data sources in order to provide assurance around the bank's processes.  Hence all the bank's data is available for Audit Analytics to mine.  These data sources can be as diverse as system access data (for example, using active directory), portfolio data at the loan level, and transactional data for wires.
+                    
+                </div>
                 <br>
-                <br>
-                Additionally I have a working knowledge of SAS, VBA, and VB.net; though it pains me to use such antiquated languages.  
-            </div>
-            <br>
-            <div class='title lead'>
-                <h2>Analytics</h2>
-            </div>
-            <div class='txt'>
-                Audit Analytics provides data services to Audit Services to facilitate audit testing.  These data services involve creating visualizations to make the underlying data accessible and actionable to Audit Services, automating audit testing, and providing self-service tools for auditors to dynamically explore the data.  Audit provides a unique opportunity for analyzing data.  Audit's mandate is to independently access bank data sources in order to provide assurance around the bank's processes.  Hence all the bank's data is available for Audit Analytics to mine.  These data sources can be as diverse as system access data (for example, using active directory), portfolio data at the loan level, and transactional data for wires.
+                <div class='title lead'>
+                    <h2>Model Risk</h2>
+                </div>
+                <div class='txt'>
+                    In addition to data acquisition and data visualization, Audit Analytics also audits model risk management.  Similar to the data element of Audit Analytics' purpose, auditing MRMD allows Audit Analytics to be exposed to every model at the bank.  The diverse mathematical techniques and the variety of ways in which models meet business needs provides constant learning opportunities.  
                 
-            </div>
-            <br>
-            <div class='title lead'>
-                <h2>Model Risk</h2>
-            </div>
-            <div class='txt'>
-                In addition to data acquisition and data visualization, Audit Analytics also audits model risk management.  Similar to the data element of Audit Analytics' purpose, auditing MRMD allows Audit Analytics to be exposed to every model at the bank.  The diverse mathematical techniques and the variety of ways in which models meet business needs provides constant learning opportunities.  
-            
+                </div>
             </div>
         </div>
-
         <?php include 'assets/includes/menu.php';?> <!--side menu -->
 
     </body>

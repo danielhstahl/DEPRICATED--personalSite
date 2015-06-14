@@ -21,8 +21,8 @@
             </div>
 
         </div>
-        <div class='container'>
-            <div class='txt'>
+        <div class='container'> 
+            <div class='txt  col-xs-12 col-md-8'>
                 One of my desires is to create a framework in which most of a bank's risk including market, liquidity, credit, and operational risk can be parsimoniously and jointly modeled.  Such a model interests me for four reasons:
                 <ul>
                 <li>It is a stimulating intellectual challenge: not just in modeling and measuring the diverse risk areas, but in convincing senior management and regulators that jointly modeling the risks is an efficacious method.
