@@ -176,7 +176,7 @@
             options.sigma=[[attributes.sigma]];
             options.y0=[attributes.X0];
             options.w=param[2];            options.sig=attributes.sig; //in the future, this should be n-dimensional            options.alph=attributes.alph; //in the future, this should be n-dimensional
-            options.lambda0=lossGivinLiquid; //            if(finalChart){                //console.log(finalChart.xAxis[0]);                //console.log(finalChart.xAxis[0].categories[finalChart.xAxis[0].getExtremes().dataMax]);                options.xaxis={min:data.x[0], max:data.x[x.length-1]};            }
+            options.lambda0=lossGivinLiquid; //            //if(finalChart){                //console.log(finalChart.xAxis[0]);                //console.log(finalChart.xAxis[0].categories[finalChart.xAxis[0].getExtremes().dataMax]);           //     options.xaxis={min:data.x[0], max:data.x[x.length-1]};           // }
             $('.progress').show();//('hidden');
             var worker = new Worker('js/distributionCreditRiskDiffusion.js');  
 			worker.postMessage({'options': 
@@ -188,8 +188,8 @@
 				} 
 				else {
                     $('.progress').hide();
-					data=event.data.result;                    if(!finalChart){
-                        createFinalChart(data.x, data.y, data.maxY);                    }                    else {                        finalChart.addSeries({                                                    name: "pdf",                            data: data.y                        });                    }
+					data=event.data.result;                    //if(!finalChart){
+                        createFinalChart(data.x, data.y, data.maxY);                    //}                    //else {                    //    finalChart.addSeries({                                            //        name: "pdf",                    //        data: data.y                    //    });                    //}
 					//console.log(data);
 				}
 			};
@@ -282,7 +282,7 @@
                 ]
             });
         }
-        function createFinalChart(x, y, yMax){            var n=x.length;            var nMin=0;            var nMax=n-1;            var yMin=yMax*.003; //since otherwise long lead in, lead out            //console.log(y[nMin]);            //console.log(yMax);            while(y[nMin]<yMin){                  nMin++;            }            while(y[nMax]<yMin){                nMax--;            }            var xAxis=x.slice(nMin, nMax+1);            var yAxis=y.slice(nMin, nMax+1);            //console.log(y);            //console.log(nMin);           // console.log(nMax);
+        function createFinalChart(x, y, yMax){            var n=x.length;            var nMin=0;            var nMax=n-1;            var yMin=yMax*.003; //since otherwise long lead in, lead out            //console.log(y[nMin]);            //console.log(yMax);            while(y[nMin]<yMin){                  nMin++;            }            while(y[nMax]<yMin){                nMax--;            }            var xAxis=x.slice(nMin, nMax+1);            var yAxis=y.slice(nMin, nMax+1);            //console.log(y);            //console.log(nMin);           // console.log(nMax);           $('#finalChart').empty();
             finalChart=new Highcharts.Chart({//$('#ExposureChart').highcharts({
                 chart:{
                     type:'spline',
