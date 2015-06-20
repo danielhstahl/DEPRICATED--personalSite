@@ -3,7 +3,9 @@
 <html>
 
     <head>
-
+        <meta name="contentType" content="about">
+        <meta name="keywords" content="about">
+        <meta name="description" content="About">
          <?php include 'assets/includes/header.php'; ?>
         <style>
             .stockUp{

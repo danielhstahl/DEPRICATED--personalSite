@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head>                <meta name="description" content="Credit Risk App">
          <?php include 'assets/includes/header.php'; ?>        
          <script src="js/inverseNorm.js"></script>
     </head>

@@ -215,7 +215,7 @@
         }
         $('.form-control').keypress(function(e){
             var id=$(this).closest('.holdSection').attr('id');
-            console.log(id);
+            //console.log(id);
             setTimeout(function(){
                     refreshChart(id);
                 },

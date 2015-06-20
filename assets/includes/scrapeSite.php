@@ -6,7 +6,7 @@ foreach($myFiles as $value) {
     if(strrpos($value, "php")){
         $meta=get_meta_tags($value);
         $file=(isset($meta['contenttype']) ? $meta['contenttype'] : null);
-        if($file==$currentFile) {
+        if($file==$currentFile && strtolower($meta['description'])!=strtolower($currentFile)) {
             //echo '<li><a href="' . $value . '">' . $meta['description'] . '</a></li>';
             echo '<form  action="' . $value . '"><input class="btn btn-default" type="submit" value="' . $meta['description'] . '"></form>';
         }

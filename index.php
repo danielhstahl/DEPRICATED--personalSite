@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  
 <html class='main'>
-<head>
+<head>    <meta name="contentType" content="home">    <meta name="keywords" content="home">    <meta name="description" content="Daniel Stahl's WebSite">
 <?php include 'assets/includes/header.php';?>
  
  <!--<link rel='stylesheet' type='text/css' href='css/frontPageStyles.css' /> -->
@@ -63,7 +63,7 @@
                 </div>
                 <div class='col-md-8 txt'>
                 <!--<div class='col-md-12 txt'>  -->
-                    Humans are naturally creative thinkers.  Many mundane and repetitive tasks are delegated to humans in the corporate world.  These are the tasks at which computers are superior.  My passion is to realize productivity enhancements through the proper design of workflows so that the workload is optimally divided between man and machine.  A happy byproduct of such an optimization is a technically superior, critically engaged workforce.                                                               
+                    People are naturally creative thinkers.  Many mundane and repetitive tasks are delegated to humans in the corporate world.  These are the tasks at which computers are superior.  My passion is to realize productivity enhancements through the proper design of workflows so that the workload is optimally divided between man and machine.  A happy byproduct of such an optimization is a technically superior, critically engaged workforce.                                                               
                 </div>
             </div>            
         </div>
@@ -98,12 +98,12 @@
                 </div>
                 <div class='col-md-8 txt'>
                 
-                    The purpose of a model is to interpret data for human consumption.  The use of mathematical sophistication implies that models are most useful when applied to a complex problem.  The constraint on a model is that to add value to the decision making process of a human, it must be computationally efficient, it must have output that is applicable and understandable to the audience, and it must be reliable.  As with data, I have self-imposed the following constraints in creating a model:
+                    The purpose of a model is to interpret data for human consumption to facilitate superior decision making.  Increasing complexity of the stochastic data generating process requires mathematical sophistication, while providing results in a timely, understandable, and applicable manner.  Thus a model must be computationally efficient, it must have informative output, and it must be reliable.  As with data, I have self-imposed the following constraints in creating a model:
                     <ul>
                     <li> The model must be parsimonious</li>
                     <li> The model must, whenever practicable, have a semi-analytical solution (to the point that efficient methods of solutions can achieved)</li>
                     <li> The model must be repeatable.</li>
-                    <li> The model must be have a GUI interface.</li>
+                    <li> The model must be have a GUI.</li>
                     
                     </ul>
                 </div> 

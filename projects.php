@@ -3,7 +3,9 @@
 <html>
     
     <head>
-        <!--<meta name="keywords" content="projects">-->
+        <meta name="contentType" content="projects">
+        <meta name="keywords" content="Projects">
+        <meta name="description" content="Projects">
         <?php include 'assets/includes/header.php'; ?>
        
     </head>

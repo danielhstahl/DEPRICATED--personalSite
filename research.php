@@ -4,6 +4,9 @@
     
     <head>
         <!--<meta name="keywords" content="projects">-->
+        <meta name="contentType" content="research">
+        <meta name="keywords" content="research">
+        <meta name="description" content="Research">
         <?php include 'assets/includes/header.php'; ?>
        
     </head>
