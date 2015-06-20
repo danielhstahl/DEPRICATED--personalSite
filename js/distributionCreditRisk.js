@@ -24,13 +24,13 @@ self.addEventListener('message', function(e) {
         var w=options['w'];
         var lambda0=options['lambda0'];
         var y0=options['y0'];        var xaxis=options.xaxis;
-        //computeXmax(15);        console.log(xaxis);
+        //computeXmax(15);       // console.log(xaxis);
         //var xmax=computeXmax(15);
         var m=sigma.length;        var riskContribution=[];        var elContribution=[];
         var n=p.length;        var lambda=0;        for(var i=0; i<n; i++){            lambda=lambda+r[i];        }        var eLoss=0;        var varL=0;
         //var xmax=a*b*.2*n; //this is definely not the right way to do this...        var xmax=0;        if(xaxis){            xmax=xaxis;        }        else {            xmax=computeXmax(10);
         }
-        console.log(xmax);
+       // console.log(xmax);
         computeDistribution(k, h, xmax);
         function computeXmax(c){            var el=getEL();            var vl=getVariance();
             return(el+c*Math.sqrt(vl));
@@ -128,7 +128,7 @@ self.addEventListener('message', function(e) {
             vloss=0;
             var cdf=0;
             var mx=0;
-            var yp=0;
+            var yp=0;            var maxY=0;
             for(var i=0;  i<h; i++){
                 yp=0;
                 x.push(dx*i);
@@ -136,7 +136,7 @@ self.addEventListener('message', function(e) {
                 self.postMessage({update: updateRatio+'%'}); 
                 for(var j=0; j<k; j++){
                     yp=yp+f[j]*Math.cos(du*j*dx*i);
-                }  
+                }                  if(yp>maxY){                    maxY=yp;                }
   
                 y.push(yp);
                 vloss=vloss+yp*i*dx*dx*i; 
@@ -148,7 +148,7 @@ self.addEventListener('message', function(e) {
                 ValueAtRisk[mx.toString()]=x[i];
                 mx=mx+.001;
             }
-            self.postMessage( {result:[x, y]});    
+            //self.postMessage( {result:[x, y]});                 self.postMessage( {result:{"x":x, "y":y, "maxY":maxY}}); 
             
             exloss=exloss-xmax*.5*y[h-1];
             exloss=exloss*dx; 
