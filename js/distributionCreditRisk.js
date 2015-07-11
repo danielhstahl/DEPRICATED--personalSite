@@ -30,7 +30,7 @@ self.addEventListener('message', function(e) {
         var n=p.length;        var lambda=0;        for(var i=0; i<n; i++){            lambda=lambda+r[i];        }        var eLoss=0;        var varL=0;
         //var xmax=a*b*.2*n; //this is definely not the right way to do this...        var xmax=0;        if(xaxis){            xmax=xaxis;        }        else {            xmax=computeXmax(10);
         }
-       // console.log(xmax);
+       // console.log(xmax);        //var t=new time();
         computeDistribution(k, h, xmax);
         function computeXmax(c){            var el=getEL();            var vl=getVariance();
             return(el+c*Math.sqrt(vl));

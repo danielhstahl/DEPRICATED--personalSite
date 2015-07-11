@@ -109,7 +109,7 @@
             <hr>
 			<div class='row'>
                 <div class='col-md-4'>
-                    <input id='submitButton' type="submit" class="btn btn-primary btn-block"></input>
+                    <button id='submitButton' class="btn btn-primary btn-block">Submit</button>
                 </div>
                 <div class='col-md-8'>                    <div class='progress'>                        <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>                    </div>
                     <div id="finalChart"></div>
@@ -160,7 +160,7 @@
             return [p, r, w];      
         }
         $('#submitButton').click(function(e){
-            getValues();
+            getValues(postData); //this will also post the values to the database
             $('#progressBar').css("width", '0%');            var lossGivinLiquid=attributes.n*attributes.a*attributes.b*attributes.lambda; //liquidity risk            var options={};            var param=computeP();
             options.p=param[0];
             options.l=param[0]; //doesnt matter....not used
@@ -195,8 +195,8 @@
 			};
             return false;
         });
-        function createCharts(){
-            getValues();
+        function createCharts(){            getValues();
+             //populate values with previous selection
             plotPdf(attributes['a'], attributes['b']);
             plotTS(attributes.X0, attributes.alpha, attributes.sigma, attributes.t);
             /*plotUnif(attributes.minPD, attributes.maxPD);*/
@@ -402,6 +402,6 @@
         function gamma(z) {
             return Math.sqrt(2 * Math.PI / z) * Math.pow((1 / Math.E) * (z + 1 / (12 * z - 1 / (10 * z))), z);
         }
-        createCharts();
+        retrieveData();                function postData(id, val) {            $.ajax({                url: 'assets/includes/phpAjax.php',                type: 'post',                data: {'id': id, 'value': val[id]},                success: function(data, status) {                    console.log("success");                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        function retrieveData() {             //$('.'+classes).each(function(index) {            //console.log(val);            $.ajax({                url: 'assets/includes/retrieveAjax.php',                type: 'post',                data: {},                success: function(data, status) {                    console.log(data);                    var data=data.object_name;                    var n=data.length;                    for(var i=0; i<n; i++){                        $('#'+data[i].id).val(data[i].Value);                                        }                    createCharts();                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        
     </script>
 </head>

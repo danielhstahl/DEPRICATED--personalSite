@@ -19,5 +19,5 @@
 <link href='css/prism.css' rel='stylesheet' />
 <script src='js/prism.js'></script>
 
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>"
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>";include 'dbConnect.php'; //$db=new myDB("client", "tYK6wTLB52FBUqBJ", "127.0.0.1", "personalWeb");$db=new myDB("root", "", "127.0.0.1", "personalWeb");$currentFile=basename($_SERVER["REQUEST_URI"], ".php");$db->trackUse("trackWeb", $_SERVER['REMOTE_ADDR'], $currentFile);
 ?>

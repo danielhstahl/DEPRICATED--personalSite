@@ -1,4 +1,4 @@
-function getValues(){ 
+function getValues(functionToExecute){ 
     $('input').each(function(){
         var current=$(this);               
         var id=current.attr('id');
@@ -8,7 +8,10 @@ function getValues(){
         }
         else {
             attributes[id]=Number(attributes[id]);
-        }           
+        }    
+        if(functionToExecute){
+            functionToExecute(id, attributes, current);
+        }        
     });
 }
 function isNumeric(n) {
