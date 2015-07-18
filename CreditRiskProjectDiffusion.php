@@ -10,8 +10,8 @@
                 <h1>Distribution of Credit Losses</h1>
             </div>
         </div>
-		<div class="container">
-			
+		<div class="container">			<div class='row'>				<div class='col-md-10'>					<select id="chooseSession" class="form-control">						<?php include 'assets/includes/sessions.php'; ?>					</select>				</div>				<div class='col-md-2'>					<button class='btn btn-danger remove'>Delete Session</button>				</div>
+			</div>			
 			<div class='row'>
 				<div class='col-md-12 holdSection'>
                     <div class='subTitle lead'>
@@ -121,7 +121,7 @@
     </body>
     <?php include 'assets/includes/footerScripts.php';?> <!--final includes for side menu --> 
     <script>
-        //$('.toggle').hide();
+        //$('.toggle').hide();		
         $('.progress').hide();//('hidden');
         var exposureChart="";
         var tsChart="";
@@ -131,7 +131,7 @@
         var yAxis;
         var data={};
         var attributes={};
-       
+       		$( "#chooseSession" ).change(function() {			var str="";			$( "select option:selected" ).each(function() {      			str = $( this ).text();    		});    		console.log(str);    		if(str!=='New Session'){  				retrieveData(str);  			}		});		
         $('#newSample').click(function(e){
             getValues();
             var data=createTS(attributes.X0, attributes.alpha, attributes.sigma, attributes.t);
@@ -143,7 +143,7 @@
         });
         $('span.input-group-addon').click(function(e){
             $(this).closest('.holdSection').find('.toggle').show();
-        }); 
+        }); 		$('.remove').click(function(e){				var session="";			$( "select option:selected" ).each(function() {      			session = $( this ).text();      			$(this).remove();    		});			console.log(session);			//console.log(select);			//select.remove();			deleteSession(session);			//$(this)		});
         function computeP(){
             var p=[];
             //var l=[];
@@ -159,8 +159,8 @@
             }
             return [p, r, w];      
         }
-        $('#submitButton').click(function(e){
-            getValues(postData); //this will also post the values to the database
+        $('#submitButton').click(function(e){			var session=$('#chooseSession').val();			if(session==='New Session'){				session=(new Date()).toISOString().replace(/[^0-9]/g, "");			}			console.log(session);
+            getValues(function(val1, val2, val3){return postData(val1, val2, session)}); //this will also post the values to the database
             $('#progressBar').css("width", '0%');            var lossGivinLiquid=attributes.n*attributes.a*attributes.b*attributes.lambda; //liquidity risk            var options={};            var param=computeP();
             options.p=param[0];
             options.l=param[0]; //doesnt matter....not used
@@ -402,6 +402,6 @@
         function gamma(z) {
             return Math.sqrt(2 * Math.PI / z) * Math.pow((1 / Math.E) * (z + 1 / (12 * z - 1 / (10 * z))), z);
         }
-        retrieveData();                function postData(id, val) {            $.ajax({                url: 'assets/includes/phpAjax.php',                type: 'post',                data: {'id': id, 'value': val[id]},                success: function(data, status) {                    console.log("success");                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        function retrieveData() {             //$('.'+classes).each(function(index) {            //console.log(val);            $.ajax({                url: 'assets/includes/retrieveAjax.php',                type: 'post',                data: {},                success: function(data, status) {                    console.log(data);                    var data=data.object_name;                    var n=data.length;                    for(var i=0; i<n; i++){                        $('#'+data[i].id).val(data[i].Value);                                        }                    createCharts();                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        
+        retrieveData();        function deleteSession(session) {            $.ajax({                url: 'assets/includes/RemoveSessions.php',                type: 'post',                data: {'session':session},                success: function(data, status) {                    console.log("success");                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        function postData(id, val, session) {            $.ajax({                url: 'assets/includes/phpAjax.php',                type: 'post',                data: {'id': id, 'value': val[id], 'session':session},                success: function(data, status) {                    console.log("success");                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        function retrieveData(val) {             var url='assets/includes/retrieveAjax.php';            if(val){            	url='assets/includes/retrieveSpecificSession.php';            }            $.ajax({                url: url,                type: 'post',                data: {'session':val},                success: function(data, status) {                                        data=JSON.parse(data);                    console.log(data);                    var data=data.object_name;                    if(data){                    	var n=data.length;                    	for(var i=0; i<n; i++){                        	$('#'+data[i].Id).val(data[i].Value);                                        	}                    	                	}                	createCharts();                },                error: function(xhr, desc, err) {                    console.log(xhr.responseText);                    console.log("Details: " + desc + "\nError:" + err);                },                async: true            }); // end ajax call          //  }                }        
     </script>
 </head>
